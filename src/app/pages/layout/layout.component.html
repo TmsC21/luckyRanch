@@ -2,9 +2,27 @@
   <div class="container-fluid d-flex justify-content-between align-items-center">
     <!-- Nav links on the left -->
     <div class="nav-links d-flex">
-      <a class="nav-link active" href="#">Home</a>
-      <a class="nav-link" href="#">About</a>
+      <a class="nav-link" [ngClass]="activeHome" (click)="activePage('home')">Home</a>
+      <a class="nav-link" [ngClass]="activeAbout" (click)="activePage('about')">About</a>
       <!--      <a class="nav-link disabled" href="#">Disabled</a>-->
+    </div>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="nav-links-small">
+      <mat-icon>view_headline</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item  [ngClass]="activeHome" class="nav-link" (click)="activePage('home')">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item class="nav-link"  [ngClass]="activeAbout" (click)="activePage('about')">
+        <mat-icon>info</mat-icon>
+        <span>About</span>
+      </button>
+    </mat-menu>
+
+    <div class="user-info d-flex align-items-center">
+      <img src="assets/nav_icon.png" alt="nav icon" width="128" height="130">
     </div>
 
     <!-- User info and Logoff button on the right -->

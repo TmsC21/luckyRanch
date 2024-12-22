@@ -1,1 +1,90 @@
-<p>home works!</p>
+<div class="video-container" [ngClass]="fullVideo ? 'full-video' : ''">
+  <!-- Auto Video -->
+  <div class="autoVideo" *ngIf="!fullVideo">
+    <video autoplay loop class="luckyVideo" #smallVideo>
+      <source src="assets/luckyRanchVideoShort.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <button mat-fab extended (click)="toggleVideo()">
+      <mat-icon>airplay</mat-icon>
+      Play full video
+    </button>
+  </div>
+
+  <!-- Full Video -->
+  <div class="fullVideo" *ngIf="fullVideo">
+    <video #mainVideo controls class="luckyVideo">
+      <source src="assets/luckyRanchVideo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <button mat-fab extended (click)="toggleVideo()">
+      <mat-icon>close</mat-icon>
+      Close
+    </button>
+  </div>
+</div>
+
+<div class="main-container" *ngIf="!fullVideo">
+  <!-- History Section -->
+  <div class="section-container" style="margin-top: 0!important;">
+    <div class="section-text">
+      <h2 class="section-title">History of Lucky Ranch</h2>
+      <p>Founded in 1952, Lucky Ranch has a rich history of horse racing and family traditions. Originally a small family-owned farm, it has grown into a place where history meets modern-day adventures. Over the decades, Lucky Ranch has won numerous local and national horse racing competitions.</p>
+      <p>Today, the ranch remains a testament to hard work and passion for nature and animals.</p>
+    </div>
+    <img src="assets/ranch.jpg" alt="Lucky Ranch" class="section-image">
+  </div>
+
+  <!-- About Section -->
+  <div class="section-container reverse">
+    <div class="section-text">
+      <h2 class="section-title">About Lucky Ranch</h2>
+      <p>Lucky Ranch spans over 200 acres of lush, green landscapes. Our dedicated team has worked tirelessly to create a sanctuary for animals and an escape for visitors. Notable achievements include winning five regional horse racing championships and opening our doors to thousands of happy guests each year.</p>
+      <p>We pride ourselves on preserving traditions while providing a modern ranch experience.</p>
+    </div>
+    <img src="assets/ranch2.jpg" alt="About Lucky Ranch" class="section-image">
+  </div>
+
+  <!-- Animals Section -->
+  <div class="section-container">
+    <div class="section-text">
+      <h2 class="section-title">Our Animals</h2>
+      <p>Lucky Ranch is home to 11 magnificent horses, each with their unique personality and history. In addition to the horses, our mini-zoo features a variety of animals including goats, chickens, and rabbits, creating a perfect family-friendly experience for visitors.</p>
+      <p>Our animals are lovingly cared for and always ready to meet new friends!</p>
+    </div>
+    <img src="assets/mini-zoo.jpg" alt="Mini Zoo" class="section-image">
+  </div>
+
+  <!-- Western City Section -->
+  <div class="section-container reverse">
+    <div class="section-text">
+      <h2 class="section-title">Western City</h2>
+      <p>Step back in time and explore our authentic Western City. Designed to immerse you in the charm of the Old West, this attraction features saloons, blacksmith shops, and even a sheriff’s office. Visitors can participate in cowboy-themed activities and enjoy reenactments.</p>
+      <p>Western City is a must-visit for anyone looking for a unique adventure!</p>
+    </div>
+    <img src="assets/western-city.jpg" alt="Western City" class="section-image">
+  </div>
+
+  <!-- Bar Section -->
+  <div class="section-container">
+    <div class="section-text">
+      <h2 class="section-title">The Western Bar</h2>
+      <p>Our Western Bar is a throwback to the saloons of the past. With rustic decor and a warm atmosphere, it’s the perfect place to relax after a day at the ranch. Enjoy handcrafted drinks and delicious snacks while soaking in the Western ambiance.</p>
+      <p>Come for the drinks, stay for the experience!</p>
+    </div>
+    <img src="assets/bar.jpg" alt="Western Bar" class="section-image">
+  </div>
+
+  <!-- Contact Section -->
+  <div class="section-container reverse">
+    <div class="section-text">
+      <h2 class="section-title">Contact Us</h2>
+      <p>Lucky Ranch is located in the heart of the countryside, just a short drive from the city. We’re open year-round and can’t wait to welcome you!</p>
+      <ul>
+        <li><strong>Phone:</strong> (123) 456-7890</li>
+        <li><strong>Email:</strong> contact-luckyranch.com</li>
+        <li><strong>Address:</strong> 123 Ranch Road, Countryside, USA</li>
+      </ul>
+    </div>
+  </div>
+</div>

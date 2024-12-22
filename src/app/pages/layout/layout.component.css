@@ -1,6 +1,6 @@
 /* Navbar Styles */
 .navbar {
-  background: linear-gradient(90deg, #512da8, #673ab7);
+  background: #302b26;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   position: relative;
@@ -30,7 +30,7 @@
 
 .nav-link.active {
   background-color: #fff;
-  color: #512da8;
+  color: #987654;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
@@ -54,7 +54,7 @@
 }
 
 .btn-primary {
-  background-color: #512da8;
+  background-color: #987654;
   border: none;
   padding: 10px 20px;
   border-radius: 30px;
@@ -67,8 +67,12 @@
 }
 
 .btn-primary:hover {
-  background-color: #3d1e9c;
+  background-color: #987654;
   transform: translateY(-3px);
+}
+.nav-links-small{
+  display: none;
+  color: #987654;
 }
 
 /* Responsive container layout */
@@ -77,4 +81,26 @@
   align-items: center;
   justify-content: space-between; /* Makes the nav-links on the left and user-info on the right */
 }
+
+@media (max-width: 1024px) {
+  .nav-links-small{
+    display: block;
+  }
+  .nav-links{
+    display: none;
+  }
+
+  .nav-link{
+    color: #987654;
+  }
+  .nav-link.active{
+    background-color: #987654;
+    color: #fff;
+  }
+
+  .nav-link.disabled{
+    color: #987654;
+  }
+}
+
 
